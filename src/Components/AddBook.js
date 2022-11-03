@@ -17,7 +17,6 @@ const AddBook = () => {
           type="text"
           placeholder="Enter Author"
         />
-        <Button btnName="category-btn" btnValue="Check Status" />
         <Button btnName="add-book" btnValue="Add Book" />
       </div>
     </form>
