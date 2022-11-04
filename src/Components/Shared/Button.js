@@ -1,13 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Button = ({ btnName, btnValue }) => {
-  return (
-    <button type='button' className={btnName}>
-      {btnValue}
-    </button>
-  );
-}
+const Button = ({ btnName, btnValue }) => (
+  <button type="submit" className={btnName}>
+    {btnValue}
+  </button>
+);
 
 Button.propTypes = {
   btnName: PropTypes.string.isRequired,

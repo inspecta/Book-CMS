@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import Categories from './Categories';
 import Header from './Header';
 import AddBook from './AddBook';
+import DisplayBooks from './DisplayBooks';
 
 const App = () => (
   <Routes>
@@ -11,6 +12,7 @@ const App = () => (
       element={(
         <>
           <Header />
+          <DisplayBooks />
           <AddBook />
         </>
       )}
