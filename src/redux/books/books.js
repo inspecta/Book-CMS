@@ -1,8 +1,12 @@
+import { v4 as uuidv4 } from 'uuid';
 import types from '../types/types';
 
 // Initial state
 const initialState = {
-  books: [],
+  books: [
+    { id: uuidv4(), title: 'The Fugitive', author: 'Harrison Ford' },
+    { id: uuidv4(), title: 'Game of Thrones', author: 'George Orwell' },
+  ],
 };
 
 // Action creators
@@ -28,7 +32,7 @@ const booksReducer = (state = initialState, action) => {
     case types.BOOK_REMOVED:
       return {
         ...state,
-        books: [...state.books.filter((book) => book.id !== action.payload.id)],
+        books: [...state.books.filter((book) => book.id !== action.payload)],
       };
 
     default:
