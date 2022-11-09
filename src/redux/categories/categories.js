@@ -1,7 +1,7 @@
 import types from '../types/types';
 
 const initialState = {
-  books: [],
+  categories: [],
 };
 
 // Action creator
@@ -12,7 +12,10 @@ export const checkBookStatus = () => ({
 // Categories reducer
 const categoriesReducer = (state = initialState, action) => {
   if (action.type === types.CHECK_BOOK_STATUS) {
-    return 'Under construction';
+    return {
+      ...state,
+      categories: [...state.categories, 'Under Construction'],
+    };
   }
   return state;
 };
