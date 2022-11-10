@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
-import { removeBookFromStore } from '../../redux/books/books';
+import { RemoveBooks } from '../../redux/features/BooksSlice';
 import Button from './Button';
 
-const Books = ({ title, author, id }) => {
+const Books = ({
+  title, author, id, category,
+}) => {
   const dispatch = useDispatch();
 
   const handleRemoveBook = (id) => {
-    dispatch(removeBookFromStore(id));
+    dispatch(RemoveBooks(id));
   };
 
   return (
     <div className="book-container flex">
       <div className="book-details">
-        <p className="category">Action</p>
+        <p className="category">{category}</p>
         <h4 className="book-title">{title}</h4>
         <p className="author">{author}</p>
         <div className="book-methods">
@@ -44,6 +46,7 @@ Books.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
 };
 
 export default Books;
