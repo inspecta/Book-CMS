@@ -1,12 +1,38 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { FetchBooksAsync } from '../redux/features/BooksSlice';
 import Books from './Shared/Books';
 
 const DisplayBooks = () => {
-  const selectedBooks = useSelector((state) => state.books);
+  const booksArr = [];
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(FetchBooksAsync());
+  }, []);
+
+  const fetchedBooks = useSelector((state) => state.fetchBooks);
+  const selectedBooks = fetchedBooks.books;
+
+  const booksObj = Object.keys(selectedBooks);
+  booksObj.forEach((book) => {
+    selectedBooks[book].forEach((i) => {
+      booksArr.push({
+        ...i,
+        id: book,
+      });
+    });
+  });
+
   return (
-    selectedBooks.books.map((book) => (
-      <Books key={book.id} id={book.id} title={book.title} author={book.author} />
+    booksArr.map((book) => (
+      <Books
+        key={book.id}
+        id={book.id}
+        title={book.title}
+        author={book.author}
+        category={book.category}
+      />
     ))
   );
 };
