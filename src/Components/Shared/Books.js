@@ -35,6 +35,7 @@ const Books = ({
             </div>
           </div>
         </div>
+        <div className="seperators-big" />
         <div className="current-chapter white">
           <h4 className="chapter-title white">CURRENT CHAPTER</h4>
           <p className="chapter-no white">Chapter 17</p>
@@ -43,7 +44,6 @@ const Books = ({
           </div>
         </div>
       </div>
-      <hr />
     </>
   );
 };
