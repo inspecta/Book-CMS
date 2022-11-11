@@ -9,36 +9,42 @@ const Books = ({
 }) => {
   const dispatch = useDispatch();
 
-  const handleRemoveBook = (id) => {
-    dispatch(RemoveBooks(id));
-  };
-
   return (
-    <div className="book-container flex">
-      <div className="book-details">
-        <p className="category">{category}</p>
-        <h4 className="book-title">{title}</h4>
-        <p className="author">{author}</p>
-        <div className="book-methods">
-          <Button btnName="btn-comments" btnValue="Comments" />
-          <button type="submit" onClick={() => handleRemoveBook(id)}>Remove</button>
-          <Button btnName="btn-edit" btnValue="Edit" />
+    <>
+      <div className="book-container">
+        <div className="book-details">
+          <p className="category white">{category}</p>
+          <h4 className="book-title white">{title}</h4>
+          <p className="author white">{author}</p>
+          <div className="book-methods flex white">
+            <Button btnName="btn-comments white" btnValue="Comments" />
+            <div className="seperators" />
+            <button type="submit" className="white" onClick={() => { dispatch(RemoveBooks(id)); }}>Remove</button>
+            <div className="seperators" />
+            <Button btnName="btn-edit white" btnValue="Edit" />
+          </div>
+        </div>
+        <div className="progress-container white">
+          <div className="circle">
+            <div className="status-completion-container">
+              <div className="inner" />
+            </div>
+            <div className="percent-status">
+              <p className="percentage white">64%</p>
+              <p className="status white">Completed</p>
+            </div>
+          </div>
+        </div>
+        <div className="seperators-big" />
+        <div className="current-chapter white">
+          <h4 className="chapter-title white">CURRENT CHAPTER</h4>
+          <p className="chapter-no white">Chapter 17</p>
+          <div className="progress white">
+            <button type="button">UPDATE PROGRESS</button>
+          </div>
         </div>
       </div>
-      <div className="progress-container">
-        <div className="circle">
-          <p className="percentage">64%</p>
-          <p className="status">Completed</p>
-        </div>
-      </div>
-      <div className="current-chapter">
-        <h4 className="chapter-title">CURRENT CHAPTER</h4>
-        <p className="chapter-no">Chapter 17</p>
-        <div className="progress">
-          <button type="button">UPDATE PROGRESS</button>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -15,8 +15,8 @@ const Categories = () => {
     <>
       <Header />
       <div className="book-categories">
-        <h2>Categories!</h2>
-        <h3>{selectedCategory.categories[0]}</h3>
+        <h2 className="white">Categories!</h2>
+        <h3 className="white">{selectedCategory.categories[0]}</h3>
         <button type="submit" className="catergory-btn" onClick={() => handleCheckStatus()}>Check Status</button>
       </div>
     </>

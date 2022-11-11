@@ -34,27 +34,36 @@ const AddBook = () => {
   };
 
   return (
-    <div className="add-book">
-      <form onSubmit={addNewBook}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Enter Book Title"
-          value={state.title}
-          onChange={onChange}
-          required
-        />
-        <input
-          type="text"
-          name="author"
-          placeholder="Enter Author"
-          value={state.author}
-          onChange={onChange}
-          required
-        />
-        <Button btnName="add-book" btnValue="Add Book" />
-      </form>
-    </div>
+    <>
+      <div className="seperators-hr" />
+      <div className="add-book">
+        <form onSubmit={addNewBook}>
+          <h2 className="add-title">ADD NEW BOOK</h2>
+          <br />
+          <div className="input-group">
+            <input
+              type="text"
+              name="title"
+              className="input title"
+              placeholder="Enter Title"
+              value={state.title}
+              onChange={onChange}
+              required
+            />
+            <input
+              type="text"
+              name="author"
+              className="input authorInput"
+              placeholder="Enter Author"
+              value={state.author}
+              onChange={onChange}
+              required
+            />
+            <Button btnName="input add-book-btn" btnValue="Add Book" />
+          </div>
+        </form>
+      </div>
+    </>
   );
 };
 
