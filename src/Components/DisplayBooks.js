@@ -9,7 +9,7 @@ const DisplayBooks = () => {
 
   useEffect(() => {
     dispatch(FetchBooksAsync());
-  }, []);
+  }, [dispatch]);
 
   const fetchedBooks = useSelector((state) => state.fetchBooks);
   const selectedBooks = fetchedBooks.books;
