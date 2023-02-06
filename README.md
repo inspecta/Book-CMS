@@ -10,6 +10,10 @@ Single Page Bookstore Application developed using React and Redux. Add a book al
 - Frameworks : React, Webpack
 - Technologies : Visual Studio Code, NPM, Chrome, Git, GitHub, Linters
 
+## Live Demo
+
+Click here for a [Live Demo](https://pedantic-beaver-cb923b.netlify.app/#/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
